@@ -1,9 +1,9 @@
 const navigation = [
+  { name: "Menus", href: "/menu" },
   { name: "Pricing", href: "/pricing" },
   { name: "Recipes", href: "/recipes" },
   { name: "Discounts", href: "/discounts" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact us", href: "/contact" },
 ];
 
 export default function Sidebar() {

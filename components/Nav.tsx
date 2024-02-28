@@ -9,16 +9,17 @@ import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 
 const navigation = [
+  { name: "Menu", href: "/menu" },
   { name: "Pricing", href: "/pricing" },
   { name: "Recipes", href: "/recipes" },
   { name: "Discounts", href: "/discounts" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact us", href: "/contact" },
 ];
 
 const Nav = () => {
   const isUserLoggedIn = true;
   const [sidebar, setSidebar] = useState(false);
+  const [form, setForm] = useState(false);
   const [providers, setProviders] = useState(null);
   return (
     <nav>
@@ -31,7 +32,21 @@ const Nav = () => {
             className="w-6 h-6 md:hidden cursor-pointer"
             onClick={() => setSidebar((prev) => !prev)}
           />
-          <FiSearch className="w-6 h-6 ml-5 hidden md:block cursor-pointer" />
+          <FiSearch
+            onClick={() => setForm((prev) => !prev)}
+            className="w-6 h-6 ml-5 hidden md:block cursor-pointer"
+          />
+          {form && (
+            <form action="/menus" method="get">
+              <input
+                className="h-3"
+                type="text"
+                name="text"
+                id="text"
+                placeholder="Search"
+              />
+            </form>
+          )}
         </div>
         <Link href="/">
           <Image src="/logo.svg" alt="keto hero logo" width={240} height={80} />

@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -20,15 +21,25 @@ export default function Home() {
       <section className="flex px-3 justify-center mb-10">
         <div className="flex-col items-center flex flex-1">
           <h2 className="mb-2">Breakfast</h2>
-          <img className="md:h-36 h-24" src="/breakfast.svg" alt="" />
+          <Image
+            width={115}
+            height={115}
+            src="/breakfast.svg"
+            alt="breakfast plate"
+          />
         </div>
         <div className="flex-1 flex items-center flex-col">
           <h2 className="mb-2">Lunch</h2>
-          <img className="md:h-36 h-24" src="/hamburger.svg" alt="/" />
+          <Image
+            width={115}
+            height={115}
+            src="/hamburger.svg"
+            alt="hamburger"
+          />
         </div>
         <div className="flex-1 flex items-center flex-col">
           <h2 className="mb-2">Dinner</h2>
-          <img className="md:h-36 h-24" src="/shrimp.svg" alt="/" />
+          <Image width={115} height={115} src="/shrimp.svg" alt="shrimp" />
         </div>
       </section>
     </div>
