@@ -15,12 +15,12 @@ export default function Home() {
       </main>
       <div className="text-center">
         <h2 className="tracking-wider mb-4 font-semibold text-lg">
-          Different options we offer
+          Basic meal boxes we offer
         </h2>
       </div>
       <section className="flex px-3 justify-center mb-10">
         <div className="flex-col items-center flex flex-1">
-          <h2 className="mb-2">Breakfast</h2>
+          <h2 className="mb-2 font-bold text-lg">Breakfast</h2>
           <Image
             width={115}
             height={115}
@@ -29,7 +29,7 @@ export default function Home() {
           />
         </div>
         <div className="flex-1 flex items-center flex-col">
-          <h2 className="mb-2">Lunch</h2>
+          <h2 className="mb-2 font-bold text-lg">Lunch</h2>
           <Image
             width={115}
             height={115}
@@ -38,7 +38,7 @@ export default function Home() {
           />
         </div>
         <div className="flex-1 flex items-center flex-col">
-          <h2 className="mb-2">Dinner</h2>
+          <h2 className="mb-2 font-bold text-lg">Dinner</h2>
           <Image width={115} height={115} src="/shrimp.svg" alt="shrimp" />
         </div>
       </section>

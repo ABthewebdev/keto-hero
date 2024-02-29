@@ -62,7 +62,7 @@ const Nav = () => {
           </div>
         ) : (
           // User authentication
-          <Link href="/login" className="font-bold">
+          <Link href="/login" className="font-bold text-base">
             Log In
             <span>&rarr;</span>
           </Link>
@@ -71,7 +71,7 @@ const Nav = () => {
       <div className="text-center hidden md:block mt-3">
         {navigation.map((item) => (
           <Link key={item.name} href={item.href} className="px-8">
-            <span>{item.name}</span>
+            <span className="text-base font-semibold">{item.name}</span>
           </Link>
         ))}
       </div>

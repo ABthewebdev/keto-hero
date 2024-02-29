@@ -15,7 +15,10 @@ export default function Sidebar() {
             <ul role="list" className="-mx-2 space-y-1">
               {navigation.map((item) => (
                 <li key={item.name} className="py-1">
-                  <a href={item.href} className="bg-gray-50 bg-opacity-0">
+                  <a
+                    href={item.href}
+                    className="bg-gray-50 bg-opacity-0 text-base font-semibold"
+                  >
                     {item.name}
                   </a>
                 </li>
