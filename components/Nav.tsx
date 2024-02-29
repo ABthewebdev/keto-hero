@@ -48,7 +48,7 @@ const Nav = () => {
             </form>
           )}
         </div>
-        <Link href="/">
+        <Link className=" hover:opacity-70" href="/">
           <Image src="/logo.svg" alt="keto hero logo" width={240} height={80} />
         </Link>
         {isUserLoggedIn ? (
