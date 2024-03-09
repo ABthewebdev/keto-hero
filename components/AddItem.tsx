@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { CheckIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 const products = [
   {
     id: 1,
     name: "Basic Tee",
     href: "#",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    imageSrc: "/box.svg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -26,9 +26,11 @@ export default function AddItem() {
           {products.map((product) => (
             <div key={product.id} className="group relative">
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                <img
+                <Image
                   src={product.imageSrc}
                   alt={product.imageAlt}
+                  width={25}
+                  height={25}
                   className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                 />
               </div>
@@ -53,7 +55,7 @@ export default function AddItem() {
                   className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
                 >
                   {check ? (
-                    "Add to box"
+                    "Add to cart"
                   ) : (
                     <CheckIcon
                       className="h-6 w-6 flex-shrink-0 text-green-500"
