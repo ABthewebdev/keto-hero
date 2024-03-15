@@ -21,6 +21,14 @@ const Nav = () => {
   const [sidebar, setSidebar] = useState(false);
   const [form, setForm] = useState(false);
   const [providers, setProviders] = useState(null);
+  const { data: session } = useSession();
+  useEffect(() => {
+    const fetchProviders = async () => {
+      const providerData = await getProviders();
+      setProviders(providerData);
+    };
+    fetchProviders();
+  })
   return (
     <nav>
       <div className="text-center">
