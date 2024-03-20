@@ -4,9 +4,10 @@ import { FaBars } from "react-icons/fa";
 import { FiShoppingCart, FiUser, FiSearch } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
-import { getProviders, useSession, signIn, signOut } from "next-auth/react";
+import { getProviders, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
+import { signIn, signOut } from "@/auth";
 
 const navigation = [
   { name: "Menu", href: "/menu" },
@@ -22,13 +23,6 @@ const Nav = () => {
   const [form, setForm] = useState(false);
   const [providers, setProviders] = useState(null);
   const { data: session } = useSession();
-  useEffect(() => {
-    const fetchProviders = async () => {
-      const providerData = await getProviders();
-      setProviders(providerData);
-    };
-    fetchProviders();
-  })
   return (
     <nav>
       <div className="text-center">
