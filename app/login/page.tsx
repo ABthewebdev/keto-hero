@@ -1,9 +1,6 @@
 "use client";
-import { useFormState, useFormStatus } from "react-dom";
-import { authenticate } from "@/app/lib/actions";
 
 export default function Login() {
-  const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -14,7 +11,7 @@ export default function Login() {
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
-          <form className="space-y-6" action="/" method="POST">
+          <form className="space-y-6" action="/">
             <div>
               <label
                 htmlFor="email"

@@ -1,8 +1,9 @@
-import NextAuth from "next-auth";
-import { authConfig } from "./auth.config";
+import { authMiddleware } from "@clerk/nextjs";
 
-export default NextAuth(authConfig).auth;
+export default authMiddleware({
+  publicRoutes: ["/", "/profile", "/register"],
+});
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|.*\\.png$).*)"],
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };
