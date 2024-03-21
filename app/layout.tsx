@@ -1,4 +1,5 @@
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Provider from "@/components/Provider";
@@ -10,20 +11,18 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  session,
 }: {
   children: React.ReactNode;
-  session: any;
 }) {
   return (
-    <html className="h-full " lang="en">
-      <body className="h-full">
-        <Provider session={session}>
+    <ClerkProvider>
+      <html className="h-full " lang="en">
+        <body className="h-full">
           <Nav />
           {children}
           <Footer />
-        </Provider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

@@ -60,7 +60,7 @@ const Nav = () => {
           </div>
         ) : (
           // User authentication
-          <Link href="/login" className="font-bold text-base">
+          <Link href="/sign-in" className="font-bold text-base">
             Log In
             <span>&rarr;</span>
           </Link>
