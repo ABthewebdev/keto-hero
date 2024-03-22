@@ -1,10 +1,5 @@
-const Dashboard = () => {
-  return (
-    <>
-      <h1 className="text-2xl font-bold mb-5">Dashboard</h1>
-      <p className="mb-5">Welcome to the dashboard!</p>
-    </>
-  );
+const DashboardPage = () => {
+  return <div>DashboardPage</div>;
 };
 
-export default Dashboard;
+export default DashboardPage;

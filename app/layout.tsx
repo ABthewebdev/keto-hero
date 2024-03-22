@@ -1,19 +1,30 @@
-import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import UserAuth from "@/components/UserAuth";
 
-export const metadata = {
-  title: "Keto Hero",
-  description: "We make going keto easy",
-};
-
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <ClerkProvider>
-      <Nav />
-      {children}
-      <Footer />
+      <html lang="en">
+        <body>
+          <div className="text-center">
+            <h2 className="font-bold text-base">
+              Start your 3 month free trial
+            </h2>
+          </div>
+          <div className="flex">
+            <Nav children={<UserAuth />} />
+          </div>
+          {children}
+          <Footer />
+        </body>
+      </html>
     </ClerkProvider>
   );
 }

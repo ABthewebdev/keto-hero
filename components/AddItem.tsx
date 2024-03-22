@@ -1,7 +1,7 @@
-"use client";
+// "use client";
 
-import { useState } from "react";
-import { CheckIcon } from "@heroicons/react/24/outline";
+// import { useState } from "react";
+// import { CheckIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 const products = [
@@ -14,11 +14,20 @@ const products = [
     price: "$35",
     color: "Black",
   },
+  {
+    id: 2,
+    name: "White Tee",
+    href: "#",
+    imageSrc: "/box.svg",
+    imageAlt: "Front of white tee",
+    price: "$35",
+    color: "White",
+  },
   // More products...
 ];
 
 export default function AddItem() {
-  const [check, setCheck] = useState(true);
+  // const [check, setCheck] = useState(true);
   return (
     <div className="bg-opacity-0">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -48,7 +57,7 @@ export default function AddItem() {
                   {product.price}
                 </p>
               </div>
-              <div className="mt-6">
+              {/* <div className="mt-6">
                 <a
                   onClick={() => setCheck((prev) => !prev)}
                   href={product.href}
@@ -64,7 +73,7 @@ export default function AddItem() {
                   )}
                   <span className="sr-only">, {product.name}</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

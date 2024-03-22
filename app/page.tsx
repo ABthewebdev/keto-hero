@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
         <div className="flex flex-col text-center justify-center items-center h-96">
           <span className="tracking-wider mb-2 text-xl font-medium">
             Make keto easy by <br className="md:hidden" />
-            creating your own box
+            creating your own box <Link href="/sign-in">Hi</Link>
           </span>
           <Button />
         </div>

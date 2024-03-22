@@ -1,7 +1,7 @@
 "use client";
 
 import { FaBars } from "react-icons/fa";
-import { FiShoppingCart, FiUser, FiSearch } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -15,24 +15,20 @@ const navigation = [
   { name: "Blog", href: "/blog" },
 ];
 
-const Nav = () => {
-  const isUserLoggedIn = false;
+const Nav = ({ children }: any) => {
   const [sidebar, setSidebar] = useState(false);
   const [form, setForm] = useState(false);
   return (
-    <nav>
-      <div className="text-center">
-        <h2 className="font-bold text-base">Start your 3 month free trial</h2>
-      </div>
-      <div className="flex justify-between px-6 pt-3">
+    <nav className="w-full">
+      <div className="flex justify-between px-8 pt-3">
         <div className="flex">
           <FaBars
-            className="w-6 h-6 md:hidden cursor-pointer"
+            className="w-8 h-8 md:hidden cursor-pointer"
             onClick={() => setSidebar((prev) => !prev)}
           />
           <FiSearch
             onClick={() => setForm((prev) => !prev)}
-            className="w-6 h-6 ml-5 hidden md:block cursor-pointer"
+            className="w-8 h-8 ml-5 hidden md:block cursor-pointer"
           />
           {form && (
             <form action="/menus" method="get">
@@ -49,22 +45,7 @@ const Nav = () => {
         <Link className=" hover:opacity-70" href="/">
           <Image src="/logo.svg" alt="keto hero logo" width={240} height={80} />
         </Link>
-        {isUserLoggedIn ? (
-          <div className="flex">
-            <Link href="/">
-              <FiUser className="w-6 h-6 mr-5" />
-            </Link>
-            <Link href="/">
-              <FiShoppingCart className="w-6 h-6" />
-            </Link>
-          </div>
-        ) : (
-          // User authentication
-          <Link href="/sign-in" className="font-bold text-base">
-            Log In
-            <span>&rarr;</span>
-          </Link>
-        )}
+        <div>{children}</div>
       </div>
       <div className="text-center hidden md:block mt-3">
         {navigation.map((item) => (
