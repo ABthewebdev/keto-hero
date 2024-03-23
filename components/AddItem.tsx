@@ -3,28 +3,8 @@
 // import { useState } from "react";
 // import { CheckIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-
-const products = [
-  {
-    id: 1,
-    name: "Basic Tee",
-    href: "#",
-    imageSrc: "/box.svg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
-  },
-  {
-    id: 2,
-    name: "White Tee",
-    href: "#",
-    imageSrc: "/box.svg",
-    imageAlt: "Front of white tee",
-    price: "$35",
-    color: "White",
-  },
-  // More products...
-];
+import Link from "next/link";
+import { products } from "@/app/lib/placeholder-data";
 
 export default function AddItem() {
   // const [check, setCheck] = useState(true);
@@ -45,15 +25,14 @@ export default function AddItem() {
               </div>
               <div className="mt-4 flex justify-between">
                 <div>
-                  <h3 className="text-sm text-gray-700">
-                    <a href={product.href}>
+                  <h3 className="text-base text-gray-700">
+                    <Link href={product.href}>
                       <span aria-hidden="true" className="absolute inset-0" />
                       {product.name}
-                    </a>
+                    </Link>
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-base font-medium text-gray-900">
                   {product.price}
                 </p>
               </div>
