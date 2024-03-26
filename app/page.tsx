@@ -1,6 +1,5 @@
 import Button from "@/components/Button";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,7 +8,7 @@ export default function Home() {
         <div className="flex flex-col text-center justify-center items-center h-96">
           <span className="tracking-wider mb-2 text-xl font-medium">
             Make keto easy by <br className="md:hidden" />
-            creating your own box <Link href="/sign-in">Hi</Link>
+            creating your own box
           </span>
           <Button />
         </div>
@@ -23,24 +22,20 @@ export default function Home() {
         <div className="flex-col items-center flex flex-1">
           <h2 className="mb-2 font-bold text-lg">Breakfast</h2>
           <Image
-            width={115}
-            height={115}
+            width={95}
+            height={95}
             src="/breakfast.svg"
             alt="breakfast plate"
+            className="md:h-40 md:w-40"
           />
         </div>
         <div className="flex-1 flex items-center flex-col">
           <h2 className="mb-2 font-bold text-lg">Lunch</h2>
-          <Image
-            width={115}
-            height={115}
-            src="/hamburger.svg"
-            alt="hamburger"
-          />
+          <Image width={95} height={95} src="/hamburger.svg" alt="hamburger" />
         </div>
         <div className="flex-1 flex items-center flex-col">
           <h2 className="mb-2 font-bold text-lg">Dinner</h2>
-          <Image width={115} height={115} src="/shrimp.svg" alt="shrimp" />
+          <Image width={95} height={95} src="/shrimp.svg" alt="shrimp" />
         </div>
       </section>
     </div>
