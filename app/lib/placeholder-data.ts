@@ -3,6 +3,7 @@ import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
+// Define the schema for the default menu boxes data
 export const defaultMenuBoxes = [
   {
     id: 1,
@@ -30,6 +31,7 @@ export const defaultMenuBoxes = [
   },
 ];
 
+// Define the schema for the protein items data
 export const proteinItems = [
   {
     id: 1,
@@ -81,3 +83,18 @@ export const proteinItems = [
     price: "$5.99",
   },
 ];
+
+export const slides = [
+  {
+    id: 1,
+    imageSrc: "/vital-eggs.webp",
+    imageAlt: "Vital Eggs",
+  },
+  {
+    id: 2,
+    imageSrc: "/vital-eggs.webp",
+    imageAlt: "Vital Eggs",
+  },
+];
+// Define the schema for the customer reviews data
+export const customerReviews = [{}];

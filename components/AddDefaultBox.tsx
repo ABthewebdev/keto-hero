@@ -37,7 +37,7 @@ export default function AddDefaultBox() {
                   {product.price}
                 </p>
                 <Button className="border-black border hover:opacity-90">
-                  <Link href={product.href}>Add To Box</Link>
+                  Add To Box
                 </Button>
               </div>
               {/* <div className="mt-6">

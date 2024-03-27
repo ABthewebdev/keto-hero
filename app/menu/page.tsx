@@ -11,7 +11,7 @@ import { proteinItems } from "../lib/placeholder-data";
 
 export default function Menu() {
   return (
-    <div>
+    <div className="sm:px-8">
       <AddDefaultBox />
       <section className="w-full py-6 md:py-12">
         <div className="container grid justify-center justify-items-center gap-4 px-6 md:gap-8 lg:px-14">
@@ -21,7 +21,7 @@ export default function Menu() {
               Select your items for the perfect meal
             </p>
           </div>
-          <div className="w-full">
+          <div className="">
             <form className="flex items-center gap-4 md:gap-8">
               <div className="flex items-center gap-2 w-full md:w-[400px]">
                 <SearchIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />

@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>
+        <body className="px-4">
           <div className="text-center">
             <h2 className="font-bold text-base">
               Start your 3 month free trial
