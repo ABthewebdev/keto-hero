@@ -21,8 +21,10 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { eggsNutritionFacts } from "@/app/lib/placeholder-data";
 import Image from "next/image";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function Lunch() {
+  const { toast } = useToast();
   return (
     <div className="grid md:grid-cols-2 items-start max-w-6xl px-4 mx-auto gap-6 lg:gap-12 py-6 bg-white">
       <div className="grid flex-col gap-4 md:gap-10 items-start">
@@ -40,7 +42,7 @@ export default function Lunch() {
                 height={280}
               />
             </SwiperSlide>
-            <SwiperSlide className="flex justify-items-center">
+            <SwiperSlide className="flex justify-items-center content-center">
               <h2 className="text-xl font-bold">Nutrition Facts</h2>
               <div className="grid grid-cols-2 gap-2">
                 {eggsNutritionFacts.map((item) => (
@@ -78,14 +80,14 @@ export default function Lunch() {
               id="color"
             >
               <Label
-                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-500"
                 htmlFor="color-white"
               >
                 <RadioGroupItem id="color-white" value="white" />
                 White
               </Label>
               <Label
-                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-500"
                 htmlFor="color-brown"
               >
                 <RadioGroupItem id="color-brown" value="brown" />
@@ -103,21 +105,21 @@ export default function Lunch() {
               id="size"
             >
               <Label
-                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-500"
                 htmlFor="size-6"
               >
                 <RadioGroupItem id="size-6" value="6" />
                 6-pack
               </Label>
               <Label
-                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-500"
                 htmlFor="size-12"
               >
                 <RadioGroupItem id="size-12" value="12" />
                 12-pack
               </Label>
               <Label
-                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+                className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-500"
                 htmlFor="size-18"
               >
                 <RadioGroupItem id="size-18" value="18" />
@@ -142,7 +144,16 @@ export default function Lunch() {
               </SelectContent>
             </Select>
           </div>
-          <Button size="lg">Add to cart</Button>
+          <Button
+            size="lg"
+            onClick={() => {
+              toast({
+                title: "Add eggs to cart",
+              });
+            }}
+          >
+            Add to cart
+          </Button>
         </form>
       </div>
     </div>

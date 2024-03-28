@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import UserAuth from "@/components/UserAuth";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function RootLayout({
   children,
@@ -22,6 +23,7 @@ export default function RootLayout({
             <Nav children={<UserAuth />} />
           </div>
           {children}
+          <Toaster />
           <Footer />
         </body>
       </html>
