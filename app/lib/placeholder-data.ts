@@ -84,16 +84,58 @@ export const proteinItems = [
   },
 ];
 
-export const slides = [
+// Define the schema for the eggs nutrition facts data
+
+export const eggsNutritionFacts = [
   {
     id: 1,
-    imageSrc: "/vital-eggs.webp",
-    imageAlt: "Vital Eggs",
+    name: "Calories",
+    value: "70",
   },
   {
     id: 2,
-    imageSrc: "/vital-eggs.webp",
-    imageAlt: "Vital Eggs",
+    name: "Total Fat",
+    value: "5g",
+  },
+  {
+    id: 3,
+    name: "Saturated Fat",
+    value: "1.5g",
+  },
+  {
+    id: 4,
+    name: "Trans Fat",
+    value: "0g",
+  },
+  {
+    id: 5,
+    name: "Cholesterol",
+    value: "185mg",
+  },
+  {
+    id: 6,
+    name: "Sodium",
+    value: "70mg",
+  },
+  {
+    id: 7,
+    name: "Total Carbohydrates",
+    value: "1g",
+  },
+  {
+    id: 8,
+    name: "Dietary Fiber",
+    value: "0g",
+  },
+  {
+    id: 9,
+    name: "Sugars",
+    value: "1g",
+  },
+  {
+    id: 10,
+    name: "Protein",
+    value: "6g",
   },
 ];
 // Define the schema for the customer reviews data

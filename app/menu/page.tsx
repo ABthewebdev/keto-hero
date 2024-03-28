@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import AddDefaultBox from "@/components/AddDefaultBox";
 import { proteinItems } from "../lib/placeholder-data";
+import Link from "next/link";
 
 export default function Menu() {
   return (
@@ -40,22 +41,18 @@ export default function Menu() {
             <h3 className="font-bold text-lg">Protein Sources</h3>
           </div>
           <div className="flex flex-wrap justify-evenly gap-8 md:gap-12">
-            {proteinItems.map((item) => (
-              <div className="flex gap-2" key={item.id}>
-                <div className="flex flex-col gap-2 md:gap-4">
-                  <Image
-                    src={item.imageSrc}
-                    alt={item.imageAlt}
-                    width={120}
-                    height={120}
-                  />
-                  <div className="flex flex-col gap-x-1.5">
-                    <div className="font-semibold">{item.name}</div>
-                    <div className="font-semibold">{item.price}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
+            <div>
+              <Link href="/menu/eggs">
+                <Image
+                  src="/vital-eggs.webp"
+                  alt="Vital Eggs"
+                  width={150}
+                  height={150}
+                />
+                <h4>Farm Fresh Eggs</h4>
+                <p>$2.99</p>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -30,7 +30,7 @@ export default function AddDefaultBox() {
               <div className="mt-4 flex justify-between flex-col gap-y-1">
                 <div>
                   <h3 className="text-base hover:opacity-90 text-gray-700">
-                    <Link href={product.href}>{product.name}</Link>
+                    {product.name}
                   </h3>
                 </div>
                 <p className="text-base font-medium text-gray-900">
