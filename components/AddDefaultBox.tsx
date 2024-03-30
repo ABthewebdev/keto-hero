@@ -8,9 +8,8 @@ import { defaultMenuBoxes } from "@/app/lib/placeholder-data";
 import { Button } from "./ui/button";
 
 export default function AddDefaultBox() {
-  // const [check, setCheck] = useState(true);
   return (
-    <div className="bg-opacity-0">
+    <section className="bg-opacity-0">
       <div className="mx-auto max-w-2xl py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div className="mt-6 flex gap-x-4 justify-evenly">
           {defaultMenuBoxes.map((product) => (
@@ -61,6 +60,6 @@ export default function AddDefaultBox() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

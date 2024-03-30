@@ -35,7 +35,6 @@ export default function Pricing() {
           </p>
         </div>
       </div>
-
       <div className="mt-16 bg-white bg-opacity-0 pb-12 lg:mt-20 lg:pb-20">
         <div className="relative z-0">
           <div className="absolute inset-0 h-5/6 bg-gray-900 bg-opacity-0 lg:h-2/3" />
