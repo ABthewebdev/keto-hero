@@ -8,7 +8,7 @@ export default function Home() {
         <div className="flex flex-col text-center justify-center items-center h-96">
           <span className="tracking-wider mb-2 text-xl font-medium">
             Make keto easy by <br className="md:hidden" />
-            creating your own bo
+            creating your own box
           </span>
           <Button />
         </div>
