@@ -31,11 +31,23 @@ export default function Home() {
         </div>
         <div className="flex-1 flex items-center flex-col">
           <h2 className="mb-2 font-bold text-lg">Lunch</h2>
-          <Image width={95} height={95} src="/hamburger.svg" alt="hamburger" />
+          <Image
+            width={95}
+            height={96}
+            src="/avocado.svg"
+            alt="avocado"
+            className="h-24 md:h-40 md:w-40"
+          />
         </div>
         <div className="flex-1 flex items-center flex-col">
           <h2 className="mb-2 font-bold text-lg">Dinner</h2>
-          <Image width={95} height={95} src="/shrimp.svg" alt="shrimp" />
+          <Image
+            width={95}
+            height={95}
+            src="/shrimp.svg"
+            alt="shrimp"
+            className="md:h-40 md:w-40"
+          />
         </div>
       </section>
     </div>
