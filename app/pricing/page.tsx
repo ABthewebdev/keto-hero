@@ -30,8 +30,8 @@ export default function Pricing() {
             The right price for you, whoever you are
           </p>
           <p className="mx-auto mt-3 max-w-4xl text-lg text-black sm:mt-5 sm:text-xl">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
-            numquam eligendi quos odit doloribus molestiae voluptatum.
+            Whether you are just getting started or you are looking to stay with
+            us, we have the right plan for you.
           </p>
         </div>
       </div>
