@@ -68,7 +68,7 @@ export default function Lunch() {
             <StarIcon className="w-5 h-5 fill-muted stroke-muted-foreground" />
           </div>
         </div>
-        <div className="text-4xl font-bold">$4.99</div>
+        <div className="text-4xl font-bold">$2.99</div>
         <form className="grid gap-4 md:gap-10">
           <div className="grid gap-2">
             <Label className="text-base" htmlFor="color">

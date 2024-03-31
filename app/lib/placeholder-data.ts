@@ -138,5 +138,26 @@ export const eggsNutritionFacts = [
     value: "6g",
   },
 ];
+
+// Define the schema for recipes data
+
+export const recipesData = [
+  {
+    id: 1,
+    name: "Jalapeno Omelette",
+    imageSrc: "/../omelette.jpg",
+    imageAlt: "Omelette",
+    href: "/",
+    text: "Delicious jalapeno omelette",
+  },
+  {
+    id: 2,
+    name: "5 minute waffles",
+    imageSrc: "/../waffles.webp",
+    imageAlt: "Waffles",
+    href: "/",
+    text: "Quick and easy waffles",
+  },
+];
 // Define the schema for the customer reviews data
 export const customerReviews = [{}];
