@@ -1,8 +1,3 @@
-import { z } from "zod";
-import { sql } from "@vercel/postgres";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
-
 // Define the schema for the default menu boxes data
 export const defaultMenuBoxes = [
   {
