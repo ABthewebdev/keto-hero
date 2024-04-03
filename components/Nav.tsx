@@ -18,7 +18,7 @@ const navigation = [
 const Nav = ({ children }: any) => {
   const [sidebar, setSidebar] = useState(false);
   return (
-    <nav className="w-full mb-2">
+    <nav className="w-full mb-8">
       <div className="flex justify-between px-4 pt-3">
         <div className="flex">
           <FaBars

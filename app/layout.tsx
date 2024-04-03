@@ -3,7 +3,6 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import UserAuth from "@/components/UserAuth";
-import { Toaster } from "@/components/ui/toaster";
 
 export default function RootLayout({
   children,
@@ -13,7 +12,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className="px-4">
+        <body className="px-8 md:px-16 lg:px-20 min-w-[400px]">
           <div className="text-center">
             <h2 className="font-bold text-base">
               Start your 3 month free trial
@@ -23,7 +22,6 @@ export default function RootLayout({
             <Nav children={<UserAuth />} />
           </div>
           {children}
-          <Toaster />
           <Footer />
         </body>
       </html>

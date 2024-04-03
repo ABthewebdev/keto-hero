@@ -3,16 +3,20 @@
  * @see https://v0.dev/t/J88xY0B3asg
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-import Image from "next/image";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import AddDefaultBox from "@/components/AddDefaultBox";
-import { proteinItems } from "../lib/placeholder-data";
-import Link from "next/link";
+import { prisma } from "@/lib/db/prisma";
+import ProductCard from "@/components/ProductCard";
 
-export default function Menu() {
+export default async function Menu() {
+  const products = await prisma.product.findMany({
+    orderBy: { id: "desc" },
+  });
   return (
-    <div className="sm:px-8">
+    <div className="sm:px-8 bg-white rounded-xl">
+      <section className="flex flex-col"></section>
       <AddDefaultBox />
       <section className="w-full py-6 md:py-12">
         <div className="container grid justify-center justify-items-center gap-4 px-6 md:gap-8 lg:px-14">
@@ -25,7 +29,6 @@ export default function Menu() {
           <div className="">
             <form className="flex items-center gap-4 md:gap-8">
               <div className="flex items-center gap-2 w-full md:w-[400px]">
-                <SearchIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
                 <Input
                   className="font-normal bg-white text-base w-full"
                   placeholder="Search for food..."
@@ -41,18 +44,7 @@ export default function Menu() {
             <h3 className="font-bold text-lg">Protein Sources</h3>
           </div>
           <div className="flex flex-wrap justify-evenly gap-8 md:gap-12">
-            <div>
-              <Link href="/menu/eggs">
-                <Image
-                  src="/vital-eggs.webp"
-                  alt="Vital Eggs"
-                  width={150}
-                  height={150}
-                />
-                <h4>Farm Fresh Eggs</h4>
-                <p>$2.99</p>
-              </Link>
-            </div>
+            <ProductCard product={products[0]} />
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import { SearchIcon, Star } from "lucide-react";
 import { recipesData } from "../lib/placeholder-data";
 import { StarIcon } from "lucide-react";
 
-const page = () => {
+export default function recipesPage() {
   return (
     <div>
       <div className="flex items-center flex-col">
@@ -37,11 +37,11 @@ const page = () => {
               />
               <h2>{recipe.name}</h2>
               <div className="flex">
-                <StarIcon className="w-4 h-4 fill-primary" />
-                <StarIcon className="w-4 h-4 fill-primary" />
-                <StarIcon className="w-4 h-4 fill-primary" />
-                <StarIcon className="w-4 h-4 fill-primary" />
-                <StarIcon className="w-4 h-4" />
+                <StarIcon className="w-4 h-4 fill-yellow-300" />
+                <StarIcon className="w-4 h-4 fill-yellow-300" />
+                <StarIcon className="w-4 h-4 fill-yellow-300" />
+                <StarIcon className="w-4 h-4 fill-yellow-300" />
+                <StarIcon className="w-4 h-4 fill-yellow-300" />
               </div>
             </article>
           </Link>
@@ -49,6 +49,4 @@ const page = () => {
       </section>
     </div>
   );
-};
-
-export default page;
+}

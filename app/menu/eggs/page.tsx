@@ -21,10 +21,8 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { eggsNutritionFacts } from "@/app/lib/placeholder-data";
 import Image from "next/image";
-import { useToast } from "@/components/ui/use-toast";
 
 export default function Lunch() {
-  const { toast } = useToast();
   return (
     <div className="grid md:grid-cols-2 items-start max-w-6xl px-4 mx-auto gap-6 lg:gap-12 py-6 bg-white">
       <div className="grid flex-col gap-4 md:gap-10 items-start">
@@ -61,11 +59,11 @@ export default function Lunch() {
         </h1>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-0.5">
-            <StarIcon className="w-5 h-5 fill-primary" />
-            <StarIcon className="w-5 h-5 fill-primary" />
-            <StarIcon className="w-5 h-5 fill-primary" />
-            <StarIcon className="w-5 h-5 fill-muted stroke-muted-foreground" />
-            <StarIcon className="w-5 h-5 fill-muted stroke-muted-foreground" />
+            <StarIcon className="w-5 h-5 fill-yellow-300" />
+            <StarIcon className="w-5 h-5 fill-yellow-300" />
+            <StarIcon className="w-5 h-5 fill-yellow-300" />
+            <StarIcon className="w-5 h-5 fill-yellow-300" />
+            <StarIcon className="w-5 h-5 fill-yellow-300" />
           </div>
         </div>
         <div className="text-4xl font-bold">$2.99</div>
@@ -144,16 +142,7 @@ export default function Lunch() {
               </SelectContent>
             </Select>
           </div>
-          <Button
-            size="lg"
-            onClick={() => {
-              toast({
-                title: "Add eggs to cart",
-              });
-            }}
-          >
-            Add to cart
-          </Button>
+          <Button size="lg">Add to cart</Button>
         </form>
       </div>
     </div>

@@ -18,7 +18,7 @@ export default function Home() {
           Basic meal boxes we offer
         </h2>
       </div>
-      <section className="flex px-3 justify-center mb-10">
+      <section className="flex justify-center mb-10">
         <div className="flex-col items-center flex flex-1">
           <h2 className="mb-2 font-bold text-lg">Breakfast</h2>
           <Image
