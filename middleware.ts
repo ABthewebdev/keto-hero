@@ -9,6 +9,7 @@ export default authMiddleware({
     "/pricing",
     "/about",
     "/discounts",
+    "/recipes",
   ],
 });
 
