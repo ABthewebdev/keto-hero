@@ -1,5 +1,6 @@
 import { Product } from "@prisma/client";
 import Link from "next/link";
+import StarIcon from "./StarIcon";
 
 import PriceTag from "./PriceTag";
 interface ProductCardProps {
@@ -26,6 +27,13 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
           )}
         </h2>
+        <div className="flex items-center gap-0.5">
+          <StarIcon className="w-5 h-5 fill-yellow-300" />
+          <StarIcon className="w-5 h-5 fill-yellow-300" />
+          <StarIcon className="w-5 h-5 fill-yellow-300" />
+          <StarIcon className="w-5 h-5 fill-yellow-300" />
+          <StarIcon className="w-5 h-5 fill-yellow-300" />
+        </div>
         <PriceTag price={product.price} />
       </div>
     </Link>

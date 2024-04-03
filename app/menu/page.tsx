@@ -44,7 +44,9 @@ export default async function Menu() {
             <h3 className="font-bold text-lg">Protein Sources</h3>
           </div>
           <div className="flex flex-wrap justify-evenly gap-8 md:gap-12">
-            <ProductCard product={products[0]} />
+            {products.map((product) => (
+              <ProductCard product={product} key={product.id} />
+            ))}
           </div>
         </div>
       </section>
