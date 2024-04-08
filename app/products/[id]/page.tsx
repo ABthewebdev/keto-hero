@@ -1,5 +1,3 @@
-"use client";
-
 import { cache } from "react";
 import { prisma } from "@/lib/db/prisma";
 import notFound from "@/app/not-found";
