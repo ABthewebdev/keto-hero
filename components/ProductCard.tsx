@@ -1,6 +1,6 @@
 import { Product } from "@prisma/client";
 import Link from "next/link";
-import StarIcon from "./StarIcon";
+import { StarIcon } from "lucide-react";
 
 import PriceTag from "./PriceTag";
 interface ProductCardProps {
@@ -29,6 +29,9 @@ export default function ProductCard({ product }: ProductCardProps) {
         </h2>
         <div className="flex items-center gap-0.5">
           <PriceTag price={product.price} />
+        </div>
+        <div className="flex">
+          <span className="font-medium text-lg">{product.rating}</span>
           <StarIcon className="w-5 h-5 fill-yellow-300" />
         </div>
       </div>

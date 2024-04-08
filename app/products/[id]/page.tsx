@@ -33,17 +33,19 @@ const getProduct = cache(async (id: string) => {
   return product;
 });
 
-// export async function generateMetadata({ params: { id } }: ProductPageProps): Promise<Metadata> {
-//   const product = await getProduct(id);
+export async function generateMetadata({
+  params: { id },
+}: ProductPageProps): Promise<Metadata> {
+  const product = await getProduct(id);
 
-//   return {
-//     title: product.name + ' - Keto Hero',
-//     description: product.description,
-//     openGraph: {
-//       images: [{ url: product?.imageSrc }],
-//     }
-//   }
-// }
+  return {
+    title: product?.name + " - Keto Hero",
+    description: `Buy some ${product?.name} at Keto Hero`,
+    // openGraph: {
+    //   images: [{ url: product?.imageSrc }],
+    // },
+  };
+}
 
 export default async function ProductPage({
   params: { id },
@@ -80,16 +82,14 @@ export default async function ProductPage({
         </>
       </div>
       <div className="grid gap-4 items-start">
-        <h1 className="text-3xl font-bold sm:text-4xl">
-          Farm Fresh Organic Eggs (12 count)
-        </h1>
+        <h1 className="text-3xl font-bold sm:text-4xl">{product?.name}</h1>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-0.5">
             {product?.rating}
             <StarIcon className="w-4 h-4 fill-yellow-300" />
           </div>
         </div>
-        <div className="text-4xl font-bold">$2.99</div>
+        <div className="text-4xl font-bold">{product?.price}</div>
         <form className="grid gap-4 md:gap-10">
           <div className="grid gap-2">
             <Label className="text-base" htmlFor="color">
