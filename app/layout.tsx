@@ -4,6 +4,11 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import UserAuth from "@/components/UserAuth";
 
+export const Metadata = {
+  title: "Keto Hero",
+  description: "We make doing keto easy",
+};
+
 export default function RootLayout({
   children,
 }: {

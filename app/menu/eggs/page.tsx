@@ -20,9 +20,12 @@ import "swiper/css/navigation";
 import { Button } from "@/components/ui/button";
 import { eggsNutritionFacts } from "@/app/lib/placeholder-data";
 import Image from "next/image";
-import StarIcon from "@/components/StarIcon";
+import { StarIcon } from "lucide-react";
+import { Metadata } from "next";
 
-export default function Lunch() {
+// export async function generateMetadata(): Promise<Metadata> {}
+
+export default function Eggs() {
   return (
     <div className="grid md:grid-cols-2 items-start max-w-6xl px-4 mx-auto gap-6 lg:gap-12 py-6 bg-white">
       <div className="grid flex-col gap-4 md:gap-10 items-start">

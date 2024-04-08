@@ -6,9 +6,10 @@
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import AddDefaultBox from "@/components/AddDefaultBox";
 import { prisma } from "@/lib/db/prisma";
 import ProductCard from "@/components/ProductCard";
+import Link from "next/link";
+import PriceTag from "@/components/PriceTag";
 
 export default async function Menu() {
   const products = await prisma.product.findMany({
@@ -16,8 +17,23 @@ export default async function Menu() {
   });
   return (
     <div className="sm:px-8 bg-white rounded-xl">
-      <section className="flex flex-col"></section>
-      <AddDefaultBox />
+      <section className="flex flex-col items-center pt-4 md:flex-row md:justify-center">
+        <img
+          className="h-64 mr-5 object-cover rounded"
+          src={products[0].imageSrc}
+          alt={products[0].name}
+        />
+        <div className="flex flex-col ">
+          <h1 className="text-2xl font-medium">{products[0].name}</h1>
+          <PriceTag price={products[0].price} />
+          <Link
+            className="bg-yellow-400 w-28 rounded-md p-2 text-center font-medium"
+            href="/menu/eggs"
+          >
+            Check it out
+          </Link>
+        </div>
+      </section>
       <section className="w-full py-6 md:py-12">
         <div className="container grid justify-center justify-items-center gap-4 px-6 md:gap-8 lg:px-14">
           <div className="flex flex-col gap-1">
@@ -26,7 +42,7 @@ export default async function Menu() {
               Select your items for the perfect meal
             </p>
           </div>
-          <div className="">
+          <div>
             <form className="flex items-center gap-4 md:gap-8">
               <div className="flex items-center gap-2 w-full md:w-[400px]">
                 <Input
@@ -40,36 +56,13 @@ export default async function Menu() {
               </Button>
             </form>
           </div>
-          <div>
-            <h3 className="font-bold text-lg">Protein Sources</h3>
-          </div>
-          <div className="flex flex-wrap justify-evenly gap-8 md:gap-12">
-            {products.map((product) => (
-              <ProductCard product={product} key={product.id} />
-            ))}
-          </div>
+        </div>
+        <div className="my-3 grid grid-cols-1 items-center md:grid-cols-2 xl:grid-cols-3">
+          {products.slice(1).map((product) => (
+            <ProductCard product={product} key={product.id} />
+          ))}
         </div>
       </section>
     </div>
-  );
-}
-
-function SearchIcon({ props }: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="11" cy="11" r="8" />
-      <path d="m21 21-4.3-4.3" />
-    </svg>
   );
 }

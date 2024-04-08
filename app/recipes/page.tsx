@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { SearchIcon, Star } from "lucide-react";
 import { recipesData } from "../lib/placeholder-data";
 import { StarIcon } from "lucide-react";
 

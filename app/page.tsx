@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import Questions from "@/components/FAQ";
 import Image from "next/image";
 
 export default function Home() {
@@ -13,43 +14,36 @@ export default function Home() {
           <Button />
         </div>
       </main>
-      <div className="text-center">
-        <h2 className="tracking-wider mb-4 font-semibold text-lg">
-          Basic meal boxes we offer
-        </h2>
-      </div>
-      <section className="flex justify-center mb-10">
-        <div className="flex-col items-center flex flex-1">
-          <h2 className="mb-2 font-bold text-lg">Breakfast</h2>
+      <section className="flex text-center flex-col justify-center">
+        <h2 className="text-xl font-medium">What can you get in your box?</h2>
+        <div className="flex justify-center gap-12">
           <Image
-            width={95}
+            className="size-52 md:size-64"
+            src="/box.svg"
+            alt="meal box"
+            width={250}
             height={95}
-            src="/breakfast.svg"
-            alt="breakfast plate"
-            className="md:h-40 md:w-40"
           />
-        </div>
-        <div className="flex-1 flex items-center flex-col">
-          <h2 className="mb-2 font-bold text-lg">Lunch</h2>
-          <Image
-            width={95}
-            height={96}
-            src="/avocado.svg"
-            alt="avocado"
-            className="h-24 md:h-40 md:w-40"
-          />
-        </div>
-        <div className="flex-1 flex items-center flex-col">
-          <h2 className="mb-2 font-bold text-lg">Dinner</h2>
-          <Image
-            width={95}
-            height={95}
-            src="/shrimp.svg"
-            alt="shrimp"
-            className="md:h-40 md:w-40"
-          />
+          <ul className="flex gap-y-1 lg:gap-y-4 flex-col list-disc text-left">
+            <li className="text-md font-medium">
+              Anything from breakfast foods to our classic keto bread
+            </li>
+            <li className="text-md font-medium">
+              You can get as much food as you need all in one order
+            </li>
+            <li className="text-md font-medium">
+              Everything is free of artificial sweeteners and preservatives
+            </li>
+            <li className="text-md font-medium">
+              We made everything and affordable and suitable for any budget
+            </li>
+            <li className="text-md font-medium">
+              Choose from any serving size from single person to family size
+            </li>
+          </ul>
         </div>
       </section>
+      <Questions />
     </div>
   );
 }

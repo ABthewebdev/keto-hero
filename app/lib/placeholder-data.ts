@@ -1,31 +1,3 @@
-// Define the schema for the default menu boxes data
-export const defaultMenuBoxes = [
-  {
-    id: 1,
-    name: "Breakfast Box",
-    href: "/menu/breakfast",
-    imageSrc: "/box.svg",
-    imageAlt: "Breakfast Box Option",
-    price: "$35",
-  },
-  {
-    id: 2,
-    name: "Lunch Box",
-    href: "/menu/lunch",
-    imageSrc: "/box.svg",
-    imageAlt: "Lunch Box Option",
-    price: "$35",
-  },
-  {
-    id: 3,
-    name: "Dinner Box",
-    href: "/menu/dinner",
-    imageSrc: "/box.svg",
-    imageAlt: "Dinner Box Option",
-    price: "$35",
-  },
-];
-
 // Define the schema for the protein items data
 export const proteinItems = [
   {

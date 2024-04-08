@@ -5,5 +5,5 @@ interface PriceTagProps {
   className?: string;
 }
 export default function PriceTag({ price, className }: PriceTagProps) {
-  return <span className="">{formatPrice(price)}</span>;
+  return <span className="font-medium text-lg">{formatPrice(price)}</span>;
 }
