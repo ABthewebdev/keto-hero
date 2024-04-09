@@ -20,7 +20,7 @@ export default async function Menu() {
       <section className="flex flex-col items-center pt-4 md:flex-row md:justify-center">
         <img
           className="h-64 mr-5 object-cover rounded"
-          src={products[0].imageSrc}
+          src={products[0].imageUrl}
           alt={products[0].name}
         />
         <div className="flex flex-col ">
@@ -28,7 +28,7 @@ export default async function Menu() {
           <PriceTag price={products[0].price} />
           <Link
             className="bg-yellow-400 w-28 rounded-md p-2 text-center font-medium"
-            href="/menu/eggs"
+            href={"/menu/products/" + products[0].id}
           >
             Check it out
           </Link>

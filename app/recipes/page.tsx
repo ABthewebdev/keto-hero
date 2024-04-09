@@ -29,7 +29,7 @@ export default function recipesPage() {
             <article className="text-base font-medium">
               <Image
                 className="w-56 h-56"
-                src={recipe.imageSrc}
+                src={recipe.imageUrl}
                 alt={recipe.imageAlt}
                 width={220}
                 height={220}

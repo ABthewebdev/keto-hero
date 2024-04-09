@@ -1,8 +1,8 @@
 import { Product } from "@prisma/client";
 import Link from "next/link";
 import { StarIcon } from "lucide-react";
-
 import PriceTag from "./PriceTag";
+
 interface ProductCardProps {
   product: Product;
 }
@@ -12,10 +12,10 @@ export default function ProductCard({ product }: ProductCardProps) {
     Date.now() - new Date(product.createdAt).getTime() <
     1000 * 60 * 60 * 24 * 7;
   return (
-    <Link className="flex flex-col pr-8" href={"/products/" + product.id}>
+    <Link className="flex flex-col pr-8" href={"/menu/products/" + product.id}>
       <img
         className="h-48 max-w-[800] self-center object-cover rounded"
-        src={product.imageSrc}
+        src={product.imageUrl}
         alt={product.name}
       />
       <div className="flex flex-1 flex-col gap-2 p-8">

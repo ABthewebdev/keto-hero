@@ -13,14 +13,14 @@ async function addProduct(formData: FormData) {
   "use server";
   const name = formData.get("name")?.toString();
   const rating = Number(formData.get("rating") || 0);
-  const imageSrc = formData.get("imageSrc")?.toString();
+  const imageUrl = formData.get("imageUrl")?.toString();
   const price = Number(formData.get("price") || 0);
 
-  if (!name || !rating || !imageSrc || !price) {
+  if (!name || !rating || !imageUrl || !price) {
     throw Error("Missing required fields");
   }
   await prisma.product.create({
-    data: { name, rating, imageSrc, price },
+    data: { name, rating, imageUrl, price },
   });
   redirect("/");
 }
@@ -32,7 +32,7 @@ export default function AddProductPage() {
       <form action={addProduct}>
         <Input required name="name" placeholder="Name" />
         <Input required name="rating" type="number" placeholder="Rating" />
-        <Input required name="imageSrc" type="url" placeholder="Image Url" />
+        <Input required name="imageUrl" type="url" placeholder="Image Url" />
         <Input required name="price" type="number" placeholder="Price" />
         <FormSubmitButton type="submit">Submit Product</FormSubmitButton>
       </form>
