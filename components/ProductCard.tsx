@@ -28,7 +28,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </h2>
         <div className="flex items-center gap-0.5">
-          <PriceTag price={product.price} />
+          <PriceTag className="font-medium text-lg" price={product.price} />
         </div>
         <div className="flex">
           <span className="font-medium text-lg">{product.rating}</span>
