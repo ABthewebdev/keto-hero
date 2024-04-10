@@ -39,3 +39,12 @@ model CartItem {
 
   @@map("cartitems")
 }
+
+model Recipe {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  recipeId    String
+  name        String
+  description String
+  imageUrl    String
+  rating      Int
+}
