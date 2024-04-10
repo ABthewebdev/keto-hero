@@ -43,7 +43,7 @@ export default async function ProductPage({
 }: ProductPageProps) {
   const product = await getProduct(id);
   return (
-    <div className="grid md:grid-cols-2 gap-6 lg:gap-12 rounded-lg bg-white items-start max-w-6xl px-4 mx-auto py-6">
+    <div className="grid md:grid-cols-2 gap-6 lg:gap-12 rounded-xl bg-white items-start max-w-6xl px-4 mx-auto py-6">
       <div className="grid md:grid-cols-5 gap-3 items-start">
         <div className="flex md:hidden items-start">
           <div className="grid gap-4">
@@ -70,7 +70,7 @@ export default async function ProductPage({
         <div className="md:col-span-4">
           <img
             alt={product?.name}
-            className="object-cover border border-gray-200 rounded-lg overflow-hidden dark:border-gray-800"
+            className="object-cover border border-gray-200 rounded-xl overflow-hidden dark:border-gray-800"
             src={product?.imageUrl}
           />
         </div>
