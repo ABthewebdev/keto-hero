@@ -19,7 +19,7 @@ const Nav = ({ children }: any) => {
   const [sidebar, setSidebar] = useState(false);
   return (
     <nav className="w-full mb-8">
-      <div className="flex justify-between px-4 pt-3">
+      <div className="flex justify-between px-1 pt-3">
         <div className="flex">
           <FaBars
             className="w-8 h-8 md:hidden cursor-pointer"
@@ -27,7 +27,7 @@ const Nav = ({ children }: any) => {
           />
           <FiSearch className="w-8 h-8 ml-5 hidden md:block cursor-pointer" />
         </div>
-        <Link className=" hover:opacity-70" href="/">
+        <Link className="hover:opacity-70" href="/">
           <Image src="/logo.svg" alt="keto hero logo" width={240} height={80} />
         </Link>
         <div>{children}</div>

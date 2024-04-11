@@ -6,6 +6,7 @@
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import AddToCartButton from "@/components/AddToBoxButton";
 import { prisma } from "@/lib/db/prisma";
 import ProductCard from "@/components/ProductCard";
 import Link from "next/link";

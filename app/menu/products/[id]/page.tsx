@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { StarIcon } from "lucide-react";
 import { Metadata } from "next";
 import PriceTag from "@/components/PriceTag";
+import AddToBoxButton from "@/components/AddToBoxButton";
 
 interface ProductPageProps {
   params: {
@@ -161,7 +162,7 @@ export default async function ProductPage({
               </SelectContent>
             </Select>
           </div>
-          <Button size="lg">Add to cart</Button>
+          <AddToBoxButton />
         </form>
       </div>
     </div>

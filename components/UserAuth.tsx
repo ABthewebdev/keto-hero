@@ -13,11 +13,9 @@ const UserAuth = () => {
           </Link>
         </div>
       ) : (
-        <div className="flex">
-          <Link href="/" className="mr-7">
-            <UserButton afterSignOutUrl="/" />
-          </Link>
-          <Link href="/">
+        <div className="flex gap-x-10">
+          <UserButton afterSignOutUrl="/" />
+          <Link href="/" className="hidden md:block">
             <FiShoppingCart className="w-8 h-8 mr-2" />
           </Link>
         </div>
