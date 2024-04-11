@@ -2,7 +2,6 @@ import FormSubmitButton from "@/components/FormSubmitButton";
 import { Input } from "@/components/ui/input";
 import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
-import Image from "next/image";
 
 export const metadata = {
   title: "Keto Hero",
