@@ -1,3 +1,5 @@
+"use server";
+
 import { cache } from "react";
 import { prisma } from "@/lib/db/prisma";
 import notFound from "@/app/not-found";
@@ -10,11 +12,11 @@ import {
   SelectContent,
   Select,
 } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
 import { StarIcon } from "lucide-react";
 import { Metadata } from "next";
 import PriceTag from "@/components/PriceTag";
 import AddToBoxButton from "@/components/AddToBoxButton";
+import { incrementProductQuantity } from "./actions";
 
 interface ProductPageProps {
   params: {
@@ -162,7 +164,10 @@ export default async function ProductPage({
               </SelectContent>
             </Select>
           </div>
-          <AddToBoxButton />
+          <AddToBoxButton
+            productId={product?.id}
+            incrementProductQuantity={incrementProductQuantity}
+          />
         </form>
       </div>
     </div>

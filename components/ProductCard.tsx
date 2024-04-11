@@ -3,6 +3,7 @@ import Link from "next/link";
 import { StarIcon } from "lucide-react";
 import PriceTag from "./PriceTag";
 import AddToBoxButton from "./AddToBoxButton";
+import { incrementProductQuantity } from "@/app/menu/products/[id]/actions";
 
 interface ProductCardProps {
   product: Product;
@@ -38,7 +39,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
         </div>
       </Link>
-      <AddToBoxButton />
+      <AddToBoxButton
+        productId={product.id}
+        incrementProductQuantity={incrementProductQuantity}
+      />
     </div>
   );
 }
