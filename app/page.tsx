@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import Link from "next/link";
 import Questions from "@/components/FAQ";
 import Image from "next/image";
 
@@ -11,7 +11,14 @@ export default function Home() {
             Make keto easy by <br className="md:hidden" />
             creating your own box
           </span>
-          <Button />
+          <Link href="/menu">
+            <button
+              type="button"
+              className="rounded-md bg-indigo-600 px-5 py-3 text-md font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Create Box
+            </button>
+          </Link>
         </div>
       </main>
       <section className="flex text-center flex-col justify-center">

@@ -1,11 +1,11 @@
-"use client";
-
-import { FaBars } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import Sidebar from "./Sidebar";
+import { Input } from "./ui/input";
+import { redirect } from "next/navigation";
+import NavMenu from "./NavMenu";
+import { getCart } from "@/lib/db/cart";
+import ShoppingCartButton from "./ShoppingCartButton";
 
 const navigation = [
   { name: "Menu", href: "/menu" },
@@ -15,22 +15,35 @@ const navigation = [
   { name: "Blog", href: "/blog" },
 ];
 
-const Nav = ({ children }: any) => {
-  const [sidebar, setSidebar] = useState(false);
+async function searchProducts(formData: FormData) {
+  "use server";
+  const searchQuery = formData.get("searchQuery")?.toString();
+
+  if (searchQuery) {
+    redirect("/search?query=" + searchQuery);
+  }
+}
+
+export default async function Nav({ children }: any) {
+  const cart = await getCart();
   return (
     <nav className="w-full mb-8">
-      <div className="flex justify-between px-1 pt-3">
-        <div className="flex">
-          <FaBars
-            className="w-8 h-8 md:hidden cursor-pointer"
-            onClick={() => setSidebar((prev) => !prev)}
-          />
-          <FiSearch className="w-8 h-8 ml-5 hidden md:block cursor-pointer" />
+      <div className="flex px-1 pt-3">
+        <div className="flex flex-1">
+          <NavMenu />
+          <form className="flex" action={searchProducts}>
+            <FiSearch className="w-8 h-8 ml-5 hidden md:block cursor-pointer" />
+            <Input
+              className="hidden md:block"
+              name="searchQuery"
+              placeholder="Search"
+            />
+          </form>
         </div>
-        <Link className="hover:opacity-70" href="/">
+        <Link className="hover:opacity-70 flex-1 justify-center" href="/">
           <Image src="/logo.svg" alt="keto hero logo" width={240} height={80} />
         </Link>
-        <div>{children}</div>
+        <div className="flex-1 justify-center">{children}</div>
       </div>
       <div className="text-center hidden md:block mt-3">
         {navigation.map((item) => (
@@ -39,10 +52,6 @@ const Nav = ({ children }: any) => {
           </Link>
         ))}
       </div>
-      {/* Toggles sidebar on click */}
-      {sidebar && <Sidebar />}
     </nav>
   );
-};
-
-export default Nav;
+}

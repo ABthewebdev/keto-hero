@@ -1,11 +1,13 @@
 import { UserButton, auth } from "@clerk/nextjs";
 import Link from "next/link";
-import { FiShoppingCart } from "react-icons/fi";
+import { getCart } from "@/lib/db/cart";
+import ShoppingCartButton from "./ShoppingCartButton";
 
-const UserAuth = () => {
+export default async function UserAuth() {
+  const cart = await getCart();
   const { userId } = auth();
   return (
-    <div>
+    <div className="flex justify-center">
       {!userId ? (
         <div>
           <Link href="/sign-in" className="font-bold text-base mr-5">
@@ -16,12 +18,10 @@ const UserAuth = () => {
         <div className="flex gap-x-10">
           <UserButton afterSignOutUrl="/" />
           <Link href="/" className="hidden md:block">
-            <FiShoppingCart className="w-8 h-8 mr-2" />
+            <ShoppingCartButton cart={cart} />
           </Link>
         </div>
       )}
     </div>
   );
-};
-
-export default UserAuth;
+}

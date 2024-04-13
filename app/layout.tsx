@@ -17,8 +17,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className="px-8 md:px-16 lg:px-20 min-w-[400px]">
-          <div className="text-center">
+        <body className="min-w-[400px]">
+          <div className="text-center px-8 md:px-16 lg:px-20">
             <h2 className="font-bold text-base">
               Start your 3 month free trial
             </h2>
