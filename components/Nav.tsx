@@ -1,6 +1,5 @@
 import { FiSearch } from "react-icons/fi";
 import Link from "next/link";
-import Image from "next/image";
 import { Input } from "./ui/input";
 import { redirect } from "next/navigation";
 import NavMenu from "./NavMenu";
@@ -28,22 +27,21 @@ export default async function Nav({ children }: any) {
   const cart = await getCart();
   return (
     <nav className="w-full mb-8">
-      <div className="flex px-1 pt-3">
-        <div className="flex flex-1">
-          <NavMenu />
-          <form className="flex" action={searchProducts}>
-            <FiSearch className="w-8 h-8 ml-5 hidden md:block cursor-pointer" />
-            <Input
-              className="hidden md:block"
-              name="searchQuery"
-              placeholder="Search"
-            />
+      <div className="flex px-5 pt-3">
+        <NavMenu />
+        <div>
+          <form className="flex flex-grow" action={searchProducts}>
+            <FiSearch className="size-8 ml-5 cursor-pointer" />
+            <Input className="w-full" name="searchQuery" placeholder="Search" />
           </form>
         </div>
-        <Link className="hover:opacity-70 flex-1 justify-center" href="/">
-          <Image src="/logo.svg" alt="keto hero logo" width={240} height={80} />
+        <Link
+          className="hover:opacity-70 hidden md:flex flex-1 justify-center"
+          href="/"
+        >
+          <span className="text-lg lusitana-bold">Keto Hero</span>
         </Link>
-        <div className="flex-1 justify-center">{children}</div>
+        <div className="flex flex-1 justify-end">{children}</div>
       </div>
       <div className="text-center hidden md:block mt-3">
         {navigation.map((item) => (
