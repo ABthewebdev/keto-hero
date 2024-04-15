@@ -24,11 +24,10 @@ async function searchProducts(formData: FormData) {
 export default async function Nav({ children }: any) {
   return (
     <nav className="w-full mb-8">
-      <div className="flex px-5 pt-3">
+      <div className="flex gap-2 px-5 pt-3">
         <NavMenu />
-        <div>
+        <div className="flex-grow-2">
           <form className="flex flex-grow" action={searchProducts}>
-            <FiSearch className="size-8 ml-5 cursor-pointer" />
             <Input className="w-full" name="searchQuery" placeholder="Search" />
           </form>
         </div>

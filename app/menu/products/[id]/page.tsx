@@ -101,7 +101,7 @@ export default async function ProductPage({
           />
         </div>
         <form className="grid gap-4 md:gap-10">
-          <div className="grid gap-2">
+          {/* <div className="grid gap-2">
             <Label className="text-base" htmlFor="size">
               Size
             </Label>
@@ -146,7 +146,7 @@ export default async function ProductPage({
                 XL
               </Label>
             </RadioGroup>
-          </div>
+          </div> */}
           <div className="grid gap-2">
             <Label className="text-base" htmlFor="quantity">
               Quantity

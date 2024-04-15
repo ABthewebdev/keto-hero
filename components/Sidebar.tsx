@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const navigation = [
   { name: "Menu", href: "/menu" },
@@ -11,9 +10,11 @@ const navigation = [
 
 export default function Sidebar() {
   return (
-    <div className="flex w-40 gap-y-5 overflow-y-auto border border-gray-200 bg-white px-6 md:hidden pt-6 ">
+    <div className="flex w-40 relative gap-y-5 overflow-y-auto border border-gray-200 bg-white px-6 md:hidden pt-6 ">
       <nav className="flex flex-1 flex-col">
-        <span className="text-base lusitana-bold">Keto Hero</span>
+        <Link href="/" className="text-base lusitana-bold">
+          Keto Hero
+        </Link>
         <ul role="list" className="flex flex-1 flex-col gap-y-7">
           <li>
             <ul role="list" className="-mx-2 space-y-1">
