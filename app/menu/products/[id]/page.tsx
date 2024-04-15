@@ -165,7 +165,7 @@ export default async function ProductPage({
             </Select>
           </div>
           <AddToBoxButton
-            productId={product?.id}
+            productId={product?.id || ""}
             incrementProductQuantity={incrementProductQuantity}
           />
         </form>
