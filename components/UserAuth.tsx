@@ -17,7 +17,7 @@ export default async function UserAuth() {
       ) : (
         <div className="flex gap-x-6 md:gap-x-10">
           <UserButton afterSignOutUrl="/" />
-          <Link href="/">
+          <Link href="/cart">
             <ShoppingCartButton cart={cart} />
           </Link>
         </div>

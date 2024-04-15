@@ -3,8 +3,6 @@ import Link from "next/link";
 import { Input } from "./ui/input";
 import { redirect } from "next/navigation";
 import NavMenu from "./NavMenu";
-import { getCart } from "@/lib/db/cart";
-import ShoppingCartButton from "./ShoppingCartButton";
 
 const navigation = [
   { name: "Menu", href: "/menu" },
@@ -24,7 +22,6 @@ async function searchProducts(formData: FormData) {
 }
 
 export default async function Nav({ children }: any) {
-  const cart = await getCart();
   return (
     <nav className="w-full mb-8">
       <div className="flex px-5 pt-3">
