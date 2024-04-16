@@ -2,7 +2,7 @@ import { Product } from "@prisma/client";
 import Link from "next/link";
 import { StarIcon } from "lucide-react";
 import PriceTag from "./PriceTag";
-import AddToBoxButton from "./AddToBoxButton";
+import AddToBoxButton from "../app/menu/AddToBoxButton";
 import { incrementProductQuantity } from "@/app/menu/products/[id]/actions";
 
 interface ProductCardProps {
