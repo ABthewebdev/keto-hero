@@ -9,24 +9,17 @@ import {
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { prisma } from "@/lib/db/prisma";
-import PriceTag from "@/components/PriceTag";
-import { Product } from "@prisma/client";
 import { formatPrice } from "@/lib/format";
+import { getCart } from "@/lib/db/cart";
+import CartEntry from "./CartEntry";
+import setProductQuantity from "./actions";
 
 export const metadata = {
   title: "Keto Hero - Shopping Cart",
 };
 
-interface ProductCardProps {
-  product: Product;
-}
-
-export default async function CartPage({ product }: ProductCardProps) {
-  const products = await prisma.product.findMany({
-    orderBy: { id: "desc" },
-  });
-  const sum = products.reduce((acc, num) => acc + num.price, 0);
+export default async function CartPage() {
+  const cart = await getCart();
   return (
     <section>
       <Card className="w-full max-w-4xl p-0">
@@ -35,27 +28,12 @@ export default async function CartPage({ product }: ProductCardProps) {
           <CardDescription>Review your order</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Separator />
-          {products.map((card) => (
-            <div key={card.id}>
-              <div className="grid grid-cols-2 items-center gap-4">
-                <img
-                  src={card.imageUrl}
-                  alt={card.name}
-                  className="aspect-square rounded-lg overflow-hidden object-cover"
-                  height={100}
-                  width={100}
-                />
-                <div className="grid gap-1">
-                  <h2 className="font-medium">{card.name}</h2>
-                </div>
-                <div className="flex items-center gap-2 text-right">
-                  <div className="font-medium">x1</div>
-                  <PriceTag price={card.price} />
-                </div>
-              </div>
-              <Separator />
-            </div>
+          {cart?.items.map((cartItem) => (
+            <CartEntry
+              cartItem={cartItem}
+              key={cartItem.id}
+              setProductQuantity={setProductQuantity}
+            />
           ))}
           {/* <div className="grid grid-cols-2 items-center gap-4">
               <div className="flex items-center gap-2">
@@ -98,9 +76,8 @@ export default async function CartPage({ product }: ProductCardProps) {
                 <div>$49.00</div>
               </div>
             </div> */}
-          <div className="grid grid-cols-2">
-            <h3 className="text-lg font-semibold">{formatPrice(sum)}</h3>
-            <Button>Pay now</Button>
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            <Button className="justify-center">Pay now</Button>
           </div>
         </CardContent>
         <CardFooter className="flex items-center gap-4 p-4">

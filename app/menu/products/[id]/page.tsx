@@ -15,7 +15,7 @@ import {
 import { StarIcon } from "lucide-react";
 import { Metadata } from "next";
 import PriceTag from "@/components/PriceTag";
-import AddToBoxButton from "@/components/AddToBoxButton";
+import AddToBoxButton from "@/app/menu/AddToBoxButton";
 import { incrementProductQuantity } from "./actions";
 
 interface ProductPageProps {
