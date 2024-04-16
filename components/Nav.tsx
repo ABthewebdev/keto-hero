@@ -26,13 +26,13 @@ export default async function Nav({ children }: any) {
     <nav className="w-full mb-8">
       <div className="flex gap-2 px-5 pt-3">
         <NavMenu />
-        <div className="flex-grow-2">
-          <form className="flex flex-grow" action={searchProducts}>
+        <div className="flex-grow-2 md:flex-grow">
+          <form className="flex" action={searchProducts}>
             <Input className="w-full" name="searchQuery" placeholder="Search" />
           </form>
         </div>
         <Link
-          className="hover:opacity-70 hidden md:flex flex-1 justify-center"
+          className="hover:opacity-70 hidden md:flex justify-center"
           href="/"
         >
           <span className="text-lg lusitana-bold">Keto Hero</span>
