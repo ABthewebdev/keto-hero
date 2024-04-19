@@ -10,7 +10,7 @@ export default async function UserAuth() {
     <div className="flex justify-center">
       {!userId ? (
         <div>
-          <Link href="/sign-in" className="font-bold text-base mr-5">
+          <Link href="/sign-in" className="font-bold text-base mr-2">
             Log In<span>&rarr;</span>
           </Link>
         </div>

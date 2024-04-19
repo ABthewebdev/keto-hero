@@ -1,5 +1,6 @@
 "use client";
 
+import { Separator } from "@/components/ui/separator";
 import { CartItemWithProduct } from "@/lib/db/cart";
 import { formatPrice } from "@/lib/format";
 import Link from "next/link";
@@ -24,38 +25,42 @@ export default function CartEntry({
     );
   }
   return (
-    <div key={product.id} className="flex justify-between items-center">
-      <img
-        src={product.imageUrl}
-        alt={product.name}
-        className="aspect-square rounded-lg overflow-hidden object-cover"
-        height={100}
-        width={100}
-      />
-      <div className="flex justify-end">
-        <div className="flex flex-col gap-1">
-          <Link
-            href={"/products/" + product.id}
-            className="flex flex-col font-medium"
-          >
-            {product.name}
-          </Link>
-          <div>Total: {formatPrice(product.price * quantity)}</div>
-          {isPending && <span>Loading ...</span>}
-        </div>
-        <div className="flex justify-self-end">
-          <div className="flex flex-col">{formatPrice(product.price)}</div>
-          <select
-            defaultValue={quantity}
-            onChange={(e) => {
-              const newQuantity = parseInt(e.currentTarget.value);
-              startTransition(async () => {
-                await setProductQuantity(product.id, newQuantity);
-              });
-            }}
-          >
-            {quantityOptions}
-          </select>
+    <div>
+      <Separator className="mb-3" />
+      <div className="flex justify-between items-center">
+        <img
+          src={product.imageUrl}
+          alt={product.name}
+          className="aspect-square rounded-lg overflow-hidden object-cover"
+          height={100}
+          width={100}
+        />
+        <div className="flex justify-end">
+          <div className="flex flex-col gap-1">
+            <Link
+              href={"/products/" + product.id}
+              className="flex flex-col font-medium"
+            >
+              {product.name}
+            </Link>
+            <div>Total: {formatPrice(product.price * quantity)}</div>
+            {isPending && <span>Loading ...</span>}
+          </div>
+          <div className="flex justify-self-end">
+            <div className="flex flex-col">{formatPrice(product.price)}</div>
+            <select
+              defaultValue={quantity}
+              onChange={(e) => {
+                const newQuantity = parseInt(e.currentTarget.value);
+                startTransition(async () => {
+                  await setProductQuantity(product.id, newQuantity);
+                });
+              }}
+            >
+              <option value={0}>0 (Remove)</option>
+              {quantityOptions}
+            </select>
+          </div>
         </div>
       </div>
     </div>

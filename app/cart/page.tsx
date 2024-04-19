@@ -35,49 +35,12 @@ export default async function CartPage() {
               setProductQuantity={setProductQuantity}
             />
           ))}
-          {/* <div className="grid grid-cols-2 items-center gap-4">
-              <div className="flex items-center gap-2">
-                <img
-                  alt={product.name}
-                  className="aspect-square rounded-lg overflow-hidden object-cover"
-                  height="100"
-                  src={product.imageUrl}
-                  width="100"
-                />
-                <div className="grid gap-1">
-                  <h2 className="font-medium">{product.name}</h2>
-        
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-right">
-                <div className="font-medium">x1</div>
-                <PriceTag price={product.price} />
-              </div>
-            </div>
-            <Separator />
-            <div className="grid grid-cols-2 items-center gap-4">
-              <div className="flex items-center gap-2">
-                <img
-                  alt="Thumbnail"
-                  className="aspect-square rounded-lg overflow-hidden object-cover"
-                  height="100"
-                  src="/placeholder.svg"
-                  width="100"
-                />
-                <div className="grid gap-1">
-                  <div className="font-medium">Aqua Filters</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">
-                    #0987654321
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-right">
-                <div className="font-medium">x1</div>
-                <div>$49.00</div>
-              </div>
-            </div> */}
+          {!cart?.items.length && <p>Your cart is empty.</p>}
           <div className="grid grid-cols-1 md:grid-cols-3">
-            <Button className="justify-center">Pay now</Button>
+            <p className="font-semibold text-base">
+              Subtotal: {formatPrice(cart?.subtotal || 0)}
+            </p>
+            <Button>Pay now</Button>
           </div>
         </CardContent>
         <CardFooter className="flex items-center gap-4 p-4">

@@ -1,8 +1,9 @@
-import { FiSearch } from "react-icons/fi";
 import Link from "next/link";
 import { Input } from "./ui/input";
 import { redirect } from "next/navigation";
 import NavMenu from "./NavMenu";
+import { Button } from "./ui/button";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Menu", href: "/menu" },
@@ -26,9 +27,14 @@ export default async function Nav({ children }: any) {
     <nav className="w-full mb-8">
       <div className="flex gap-2 px-5 pt-3">
         <NavMenu />
-        <div className="flex-grow-2 md:flex-grow">
+        <div className="flex-grow-2 md:flex-1">
           <form className="flex" action={searchProducts}>
-            <Input className="w-full" name="searchQuery" placeholder="Search" />
+            <Input
+              className="md:w-72"
+              name="searchQuery"
+              placeholder="Search"
+              type="search"
+            />
           </form>
         </div>
         <Link
