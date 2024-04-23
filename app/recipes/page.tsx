@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { recipesData } from "../lib/placeholder-data";
+import { recipesData } from "@/lib/placeholder-data";
 import { StarIcon } from "lucide-react";
 
 export default function recipesPage() {
@@ -30,7 +30,7 @@ export default function recipesPage() {
               <Image
                 className="w-56 h-56"
                 src={recipe.imageUrl}
-                alt={recipe.imageAlt}
+                alt={recipe.name}
                 width={220}
                 height={220}
               />
