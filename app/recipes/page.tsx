@@ -2,8 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { recipesData } from "@/lib/placeholder-data";
 import { StarIcon } from "lucide-react";
+
+const recipesData = [
+  {
+    id: 1,
+    imageUrl: "/omelette.jpg",
+    name: "Jalapeno Omelette",
+  },
+  {
+    id: 2,
+    imageUrl: "/waffles.webp",
+    name: "5 minute waffles",
+  },
+];
 
 export default function recipesPage() {
   return (
