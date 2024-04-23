@@ -30,7 +30,7 @@ export default function recipesPage() {
               <Image
                 className="w-56 h-56"
                 src={recipe.imageUrl}
-                alt={recipe.imageAlt}
+                alt={recipe.name}
                 width={220}
                 height={220}
               />
