@@ -100,6 +100,10 @@ export default async function ProductPage({
             className="text-4xl font-bold ml-auto"
           />
         </div>
+        <section className="text-center font-semibold text-xl">
+          <h2>Nutrition Facts</h2>
+          <div className="grid grid-cols-2"></div>
+        </section>
         <form className="grid gap-4 md:gap-10">
           {/* <div className="grid gap-2">
             <Label className="text-base" htmlFor="size">
