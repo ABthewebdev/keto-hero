@@ -41,7 +41,7 @@ export default async function Nav({ children }: any) {
           className="hover:opacity-70 hidden md:flex justify-center"
           href="/"
         >
-          <span className="text-lg lusitana-bold">Keto Cart</span>
+          <span className="text-lg lusitana-bold">Keto </span>
         </Link>
         <div className="flex flex-1 justify-end">{children}</div>
       </div>
