@@ -43,8 +43,10 @@ export default function CartEntry({
             >
               {product.name}
             </Link>
-            <div>Total: {formatPrice(product.price * quantity)}</div>
-            {isPending && <span>Loading ...</span>}
+            <div>
+              Total: {formatPrice(product.price * quantity)}
+              {isPending && <span>Loading ...</span>}
+            </div>
           </div>
           <div className="flex justify-self-end">
             <div className="flex flex-col">{formatPrice(product.price)}</div>
